@@ -7,15 +7,19 @@ using namespace std;
 
 namespace app {
 
-    class Application {
+    class App {
         public :
-            void demanderAction(string, int);
-            void executer();
-            Application();
-            ~Application();
+            void Executer();
+            App();
+            App(int, bool, string, bool, string, string, int)
+            ~App();
     }   private :
+            int crypt_mode;
+            bool crypt_decrypt;
+            string adresse;
+            bool ecrire_lire;
             string texte;
-            string chm;
-            int choix;
+            string clef;
+            int decalage
 
 }
