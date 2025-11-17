@@ -7,12 +7,14 @@ namespace GestionCryptage{
     class GestionCryptage{
 
         private :
-            int algoChoisi;
+            int Crypt_mode;
+            std::string Texte;
+            bool Crypt_Decrypt;
 
         public :
             GestionCryptage();
             ~GestionCryptage();
-            bool selectionnerAlgo(int);
+            void selectionnerAlgo();
             std::string encrypter(std::string);
             std::string decrypter(std::string);
     };
