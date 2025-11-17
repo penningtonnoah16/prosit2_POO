@@ -20,8 +20,5 @@ namespace IHM{
         std::cin>>i;
         return i;
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> e0352a5 (Ajout IHM + GestionCryptage)
+
