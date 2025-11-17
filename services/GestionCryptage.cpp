@@ -8,10 +8,8 @@ namespace GestionCryptage{
     GestionCryptage::GestionCryptage(){}
     GestionCryptage::~GestionCryptage(){}
 
-    bool GestionCryptage::selectionnerAlgo(int rep){
-        if (rep != 1 && rep != 2 && rep != 3) {return false;}
-        this->algoChoisi=rep;
-        return true;
+    void GestionCryptage::selectionnerAlgo(int rep){
+        this->Crypt_mode=rep;
     }
 
     std::string GestionCryptage::encrypter(std::string txt){
@@ -29,22 +27,18 @@ namespace GestionCryptage{
             std::string temp = cesar.encrypter(texte);
             return xorAlgo.encrypter(temp);
         }
-
     return "ERREUR : aucun algo choisi";
 }
 
 std::string GestionCryptage::decrypter(std::string texte) {
-
     if (algoChoisi == 1) {
         CryptageCesar cesar(3);
         return cesar.decrypter(texte);
     }
-
     if (algoChoisi == 2) {
         CryptageXOR xorAlgo(42);
         return xorAlgo.decrypter(texte);
     }
-
     if (algoChoisi == 3) {
         CryptageCesar cesar(3);
         CryptageXOR xorAlgo(42);
@@ -52,7 +46,6 @@ std::string GestionCryptage::decrypter(std::string texte) {
         std::string temp = xorAlgo.decrypter(texte);
         return cesar.decrypter(temp);
     }
-
     return "ERREUR : aucun algo choisi";
 }
 }
